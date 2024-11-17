@@ -1,0 +1,109 @@
+/* Reset dasar */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #1b1b1b;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Animasi lirik */
+.lyrics-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.lyrics {
+  font-size: 2rem;
+  line-height: 3rem;
+  animation: scrollLyrics 15s linear infinite;
+}
+
+@keyframes scrollLyrics {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Bagian akhir */
+.ending {
+  height: 100vh;
+  background: #ff7eb3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.photo-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.photo-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border: 5px solid white;
+}
+
+/* Animasi hati */
+.hearts {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: red;
+  transform: rotate(45deg);
+  top: 100%;
+  animation: floatHeart 5s infinite ease-in-out;
+}
+
+.heart:before, .heart:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -25px;
+  left: 0;
+}
+
+.heart:after {
+  left: -25px;
+  top: 0;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateX(0) rotate(45deg);
+    top: 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px) rotate(45deg);
+    top: 0%;
+    opacity: 0;
+  }
+}
